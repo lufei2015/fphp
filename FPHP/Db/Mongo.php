@@ -77,7 +77,7 @@ class Mongo
         if (empty($config['username']) && empty($config['password']))
             $mongoDsn = "mongodb://{$config['server']}:{$config['port']}/{$config['dbname']}";
         else
-            $mongoDsn = "mongodb://{$config['user']}:{$config['password']}@{$config['server']}:{$config['port']}/admin";
+            $mongoDsn = "mongodb://{$config['username']}:{$config['password']}@{$config['server']}:{$config['port']}/admin";
 
         try {
             $this->_mongoHandle = new \MongoClient($mongoDsn);
